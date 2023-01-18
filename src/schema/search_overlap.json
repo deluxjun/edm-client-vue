@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "mode": {
+        "type": "string",
+        "title": "label.range",
+        "enum": [
+          { "value": "duplistnameItem", "label": "label.filename" },
+          { "value": "duplist", "label": "label.samefile" }
+        ],
+        "attrs": {
+          "type": "radio"
+        }
+      },
+      "elementName": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 80,
+        "title": "label.keyword",
+        "attrs": {
+          "placeholder": "label.keyword",
+          "title": "messages.inputKeyword"
+        }
+      }
+    },
+    "additionalProperties": false,
+    "required": []
+  }
+  

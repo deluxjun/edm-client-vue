@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="./css/bulma.min.css" />
+    <link href="./css/font-awesome.css" rel="stylesheet" />
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/sitelogin.js"></script>
+</head>
+
+<script>
+    var useAuthKey = false;
+    var clientToken = 0;
+    var timeInterval;
+    var loginLimitMinute = 3;
+    var nSecond = loginLimitMinute * 60;
+    var ticketId = "";
+    const defaultErrMsg = "An error occurred. \n Please try again later.";
+
+    deleteCookie('pChange', '/xedrm');
+    deleteCookie('loginWithOut', '/xedrm');
+
+    function checkHq() {
+        deleteCookie('pChange', '/xedrm');
+        deleteCookie('loginWithOut', '/xedrm');
+        let userId = document.getElementById("idInput").value;
+        let path = getContextPath();
+        let request = new window.XMLHttpRequest();
+        let hqServerURL = decodeURIComponent(getCookie('hqServer'))
+        let hqServer = request.open('GET', hqServerURL + "/json/daelim/hqSiteChecker?userId=" + userId, true);
+        request.onload = function () {
+            if (request.status === 200 || request.status === 201) {
+                if (request.response) {
+                    let response = JSON.parse(request.response);
+                    if (response.checker == 0) {
+                        setCookie('isHq', true, '/xedrm');
+                    } else {
+                        setCookie('isHq', false, '/xedrm');
+                    }
+                    fnCheckLogin(response.checker)
+                }
+                else {
+                    console.log("NOT RESPONSE")
+                    fnOpenAlertModal(defaultErrMsg);
+                }
+            } else {
+                console.log("STATUS")
+                fnOpenAlertModal(defaultErrMsg);
+            }
+        }
+        request.onerror = function (error) {
+            console.log(error)
+            fnOpenAlertModal(defaultErrMsg);
+        }
+
+        request.send();
+    }
+
+    function fnCheckLogin(isHq) {
+        if ($("#idInput").val() == "") {
+            fnOpenAlertModal("Please enter your ID.");
+            return;
+        }
+        if ($("#pwInput").val() == "") {
+            fnOpenAlertModal("Please enter your password.");
+            return;
+        }
+
+        let data = "userId=" + document.getElementById("idInput").value + "&" + "password=" + document.getElementById("pwInput").value + "&hqCheck=" + isHq;
+
+        let request = new window.XMLHttpRequest();
+        //request.open('POST', 'http://192.168.21.62:7080/xedrm' + "/json/daelim/login1", true);
+        request.open('POST', getContextPath() + "/json/daelim/login1", true);
+        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        request.onload = function () {
+            if (request.status === 200 || request.status === 201) {
+                if (request.response) {
+                    var isSuccess = false;
+                    var result = JSON.parse(request.response);
+                    if (result.errcode) {
+                        if (result.errcode == "0") {
+                            isSuccess = true;
+                            realLogin(result, isHq);
+                        } else {
+                            fnOpenAlertModal(result.errmsg);
+                        }
+                    } else {
+                        isSuccess = true;
+                        realLogin(result, isHq);
+                    }
+                } else {
+                    fnOpenAlertModal(defaultErrMsg);
+                }
+            } else {
+                fnOpenAlertModal(defaultErrMsg);
+            }
+        }
+        request.onerror = function (error) {
+            fnOpenAlertModal(defaultErrMsg);
+        }
+        request.send(data);
+    }
+
+    function fnCheckLogin2() {
+        var sum = document.getElementById("p1").value + document.getElementById("p2").value + document.getElementById("p3").value + document.getElementById("p4").value;
+        if (document.getElementById("p1").value == '' || document.getElementById("p2").value == '' || document.getElementById("p3").value == '' || document.getElementById("p4").value == '') {
+            fnOpenAlertModal("You haven't entered a four-digit password.");
+        }
+        let data = "userId=" + document.getElementById("idInput").value + "&" + "password2=" + sum;
+        let request = new window.XMLHttpRequest();
+        //request.open('POST', 'http://192.168.21.62:7080/xedrm' + "/json/daelim/login2", true);
+        request.open('POST', getContextPath() + "/json/daelim/login2", true);
+        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        request.onload = function () {
+            if (request.status === 200 || request.status === 201) {
+                if (request.response) {
+                    var isSuccess = false;
+                    var result = JSON.parse(request.response);
+                    if (result.errcode) {
+                        if (result.errcode == "0") {
+                            isSuccess = true;
+                            gotoPath(result);
+                        } else {
+                            fnClose2stModal();
+                            fnOpenAlertModal(result.errmsg);
+                        }
+                    } else {
+                        isSuccess = true;
+                        gotoPath(result);
+                    }
+                } else {
+                    fnClose2stModal();
+                    fnOpenAlertModal(defaultErrMsg);
+                }
+            } else {
+                fnClose2stModal();
+                fnOpenAlertModal(defaultErrMsg);
+            }
+        }
+        request.onerror = function (error) {
+            fnOpenAlertModal(defaultErrMsg);
+        }
+        request.send(data);
+
+    }
+    function realLogin(result, isHq) {
+        if (result.list && result.list.length > 0) {
+            var user = result.list[0].user;
+            var path = getContextPath();
+            ticketId = result.list[0].adminSid;
+
+            var loginWithOut = result.list[0].loginWithOut; //180일 설정
+            if (loginWithOut == true || loginWithOut == 'true') {
+                setCookie('loginWithOut', true, '/xedrm');
+            } else {
+                deleteCookie('loginWithOut', '/xedrm');
+            }
+
+            if (isHq == 0) { // 외부
+                let initUser = result.list[0].initUser; //2차 패스워드 설정                                                
+                if (loginWithOut == true || loginWithOut == 'true') { // 180일 지남
+                    setCookie('pChange', false, '/xedrm');
+                    gotoPath(result);
+                } else if (initUser == true || initUser == 'true') {
+                    setCookie('pChange', true, '/xedrm');
+                    gotoPath(result);
+                } else {
+                    //2차 로그인 시키기
+                    fnOpen2stModal();
+                }
+            } else { // 내부
+                let initUser = result.list[0].initUser;
+                if (loginWithOut == true || loginWithOut == 'true') { // 180일 지남
+                    setCookie('pChange', false, '/xedrm');
+                    gotoPath(result)
+                } else if (initUser == true || initUser == 'true') {
+                    setCookie('pChange', true, '/xedrm');
+                    gotoPath(result);
+                } else {
+                    setCookie('pChange', false, '/xedrm');
+                    gotoPath(result)
+                }
+            }
+
+
+        }
+    }
+
+    function gotoPath(result) {
+        var path = getContextPath();
+        console.log(result)
+
+        if (result && result.list && result.list.length > 0) {
+            var setpath = getContextPath();
+            var ticketId = result.list[0].adminSid;
+            setCookie('auth', ticketId, '/xedrm');    //자동로그인 설정
+        } else {
+            if (!ticketId || ticketId == '') {
+                setCookie('auth', ticketId, '/xedrm');    //자동로그인 설정
+            }
+        }
+
+        if ('/' === path) {
+            window.top.location.href = "../../";
+        } else {
+            window.top.location.href = "../";
+        }
+    }
+
+    function getContextPath() {
+        var path = window.location.pathname.substring(0, window.location.pathname.indexOf("/", 2));
+        if ('/static' === path) return '/';
+        return path;
+    }
+
+    function getCookie(cName) {
+        var value = document.cookie.match('(^|;) ?' + cName + '=([^;]*)(;|$)');
+        return value ? value[2] : null;
+    }
+
+    function removeCookie(cName, path) {
+        let expire = new Date();
+        expire.setDate(expire.getDate() - 1);
+        document.cookie = cName + '=; path=' + path + '; expires=' + expire.toGMTString() + ';';
+    }
+
+    function fnLoginEnterKey() {
+        if (window.event.keyCode == 13) {
+            checkHq();
+        }
+    }
+
+    function fnLoginEnterKey2() {
+        if (window.event.keyCode == 13) {
+            fnCheckLogin2();
+        }
+    }
+
+    var capsLockTimeout = null;
+    function fnCapsLockTooltip(e, obj) {
+        var keyCode = 0;
+        var shiftKey = false;
+        keyCode = e.keyCode;
+        shiftKey = e.shiftKey;
+
+        if (((keyCode >= 65 && keyCode <= 90) && !shiftKey) || ((keyCode >= 97 && keyCode <= 122) && shiftKey)) {
+            var item = $(obj).offset();
+            var objWidth = $(obj).width();
+            var objHeight = $(obj).height();
+            $(".tooltiptext").show();
+            $(".tooltiptext").css("left", item.left);
+            $(".tooltiptext").css("top", item.top + objHeight);
+            if (capsLockTimeout != null) {
+                clearTimeout(capsLockTimeout);
+            }
+            capsLockTimeout = setTimeout(function () {
+                $(".tooltiptext").hide();
+            }, 1000);
+        }
+    }
+
+    function numberMaxLength(e) {
+        if (e.value.length > e.maxLength) {
+            e.value = e.value.slice(0, e.maxLength);
+        }
+    }
+
+    function fnOpenAlertModal(msg) {
+        $("#alert-modal").addClass("is-active");
+        $("#alert-modal-message").text(msg);
+    }
+
+    function fnOpen2stModal() {
+        $("#st2-modal").addClass("is-active");
+    }
+
+    function fnClose2stModal() {
+        $("#st2-modal").removeClass("is-active");
+    }
+
+    function fnCloseAlertModal() {
+        $("#alert-modal").removeClass("is-active");
+    }
+
+    $(function () {
+        //페이지 시작시
+    });
+
+</script>
+
+<body>
+    <div class="_loginWrapper">
+        <div class="_tBox">
+            <img src="./img/logo_ecm.gif" class="_mgTop30" />
+        </div>
+
+        <div class="_mBox">
+            <div class="_mBoxLbox _fLeft">
+                <div class="_sysFullNm">
+                    <span>ENTERPRISE<br />CONTENTS<br />MANAGEMENT</span>
+                </div>
+                <div class="_sysComment">
+                    <span></span>
+                </div>
+            </div>
+            <div class="_mBoxRbox _fLeft">
+                <div class="two-factor-main">
+                    <div class="login-input-area">
+                        <input type="text" id="idInput" onkeyup="fnLoginEnterKey()"
+                            onkeypress="fnCapsLockTooltip(event, this)" />
+                        <input type="password" id="pwInput" class="_mgTop9" onkeyup="fnLoginEnterKey()"
+                            onkeypress="fnCapsLockTooltip(event, this)" />
+                    </div>
+                    <div class="login-btn-area">
+                        <div class="login-chk">
+                            <label class="checkbox">
+                                <input type="checkbox" id="rememberIdChk"
+                                    style="width:17px; height: 17px; position: relative; top: 3px;" />
+                                Remember ID
+                            </label>
+                        </div>
+                        <div class="login-btn pointer" onclick="checkHq()"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div class="copyright-area">
+            Copyright ⓒ 2018 <b>DAELIM</b>. All Rights Reserved.
+        </div>
+
+    </div>
+
+    <div class="modal" id="alert-modal">
+        <div class="modal-background"></div>
+        <div class="modal-content alert-modal-content-wapper">
+            <div class="alert-modal-content-header">
+                <span>확인</span>
+            </div>
+            <div style="padding: 10px 10px; text-align: center;">
+                <div style="border-bottom: 1px solid #a0afc3; padding-bottom: 15px; ">
+                    <span id="alert-modal-message" style="font-size: 13px;">확인</span>
+                </div>
+                <div class="_mgTop10">
+                    <input type="button" class="btn pointer" style="height: 35px; width: 100px;"
+                        onclick="fnCloseAlertModal()" value="확인" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="st2-modal">
+        <div class="modal-background"></div>
+        <div class="modal-content st2-modal-content-wapper">
+            <div class="alert-modal-content-header">
+                <span>For Security. Please Identify Yourself</span>
+            </div>
+            <div style="padding: 10px 10px; text-align: center;">
+                <div style="border-bottom: 1px solid #a0afc3; padding-bottom: 15px; height: 150px;">
+                    <br>
+                    <div>Enter the 4 digit password</div>
+                    <br>
+                    <div>
+                        <input type="password" min="0" max="9" maxlength="1" oninput="numberMaxLength(this);"
+                            onkeyup="fnLoginEnterKey2()" id="p1"
+                            style="width:50px; height:50px; font-size: 25px; text-align: center;"></input>
+                        <input type="password" min="0" max="9" maxlength="1" oninput="numberMaxLength(this);"
+                            onkeyup="fnLoginEnterKey2()" id="p2"
+                            style="width:50px; height:50px; font-size: 25px; text-align: center;"></input>
+                        <input type="password" min="0" max="9" maxlength="1" oninput="numberMaxLength(this);"
+                            onkeyup="fnLoginEnterKey2()" id="p3"
+                            style="width:50px; height:50px; font-size: 25px; text-align: center;"></input>
+                        <input type="password" min="0" max="9" maxlength="1" oninput="numberMaxLength(this);"
+                            onkeyup="fnLoginEnterKey2()" id="p4"
+                            style="width:50px; height:50px; font-size: 25px; text-align: center;"></input>
+                    </div>
+                </div>
+                <div class="_mgTop10">
+                    <input type="button" class="btn pointer" style="height: 35px; width: 100px;"
+                        onclick="fnCheckLogin2()" value="Verify" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tooltiptext">
+        &lt;Caps Lock&gt; is on.
+    </div>
+
+</body>
+
+<style>
+    .html_old {
+        background-color: #f2f2f2;
+    }
+
+    body {
+        font-family: Verdana, sans-serif;
+    }
+
+    .two-factor-main {
+        width: 100%;
+        min-height: 300px;
+    }
+
+    .two-factor-main .button {
+        width: 100%;
+        color: white;
+        display: inline;
+    }
+
+    .two-factor-main .button.is-small {
+        width: 50px;
+        background-color: white;
+        color: black;
+        margin-left: 200px;
+    }
+
+    .two-factor-main .tag.is-rounded {
+        background-color: #959499;
+        color: white;
+    }
+
+    input.input {
+        display: inline;
+        height: 51px;
+    }
+
+    ._loginWrapper {
+        width: 703px;
+        margin: 175px auto;
+        overflow: hidden;
+        background-color: white;
+    }
+
+    ._loginWrapper .systemName {
+        text-align: center;
+        vertical-align: middle;
+        font-size: 13pt;
+        font-weight: bold;
+    }
+
+    ._loginWrapper .systemLogo {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    ._loginWrapper .loginLogo {
+        height: 95px;
+    }
+
+    ._tBox {
+        border-top: 2px solid #b1c2db;
+        border-bottom: 1px solid #a0afc3;
+        height: 78px;
+    }
+
+    ._mBox {
+        border-bottom: 0px solid gray;
+        margin-top: 23px;
+        margin-bottom: 23px;
+    }
+
+    ._mBoxLbox {
+        width: 330px;
+        min-height: 350px;
+        background: url('./img/bg_color.gif') no-repeat;
+        padding: 20px 20px;
+        position: relative;
+        margin-right: 42px;
+    }
+
+    ._mBoxRbox {
+        width: 330px;
+    }
+
+    .login-input-area {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #a0afc3;
+    }
+
+    .login-btn-area {
+        padding-top: 13px;
+        padding-bottom: 28px;
+    }
+
+    .login-chk {
+        font-size: 12pt;
+        float: left;
+        width: 135px;
+        height: 41px;
+        padding-top: 10px;
+    }
+
+    .login-btn {
+        float: right;
+        width: 116px;
+        height: 41px;
+        background: url('./img/btn_login_off.gif') no-repeat;
+    }
+
+    .login-btn:hover {
+        background: url('./img/btn_login_on.gif') no-repeat;
+    }
+
+    .copyright-area {
+        border-top: 1px solid #a0afc3;
+        padding-top: 10px;
+        font-size: 11px;
+        color: #666666;
+        text-align: center;
+    }
+
+    input#idInput {
+        background: url("./img/icon_user.gif") no-repeat 18px 50%;
+        padding-left: 55px;
+        width: 100%;
+        height: 51px;
+        border: 1px solid #c9c9c9;
+    }
+
+    input#pwInput {
+        background: url("./img/icon_pw.gif") no-repeat 18px 50%;
+        padding-left: 55px;
+        width: 100%;
+        height: 51px;
+        border: 1px solid #c9c9c9;
+    }
+
+    ._sysFullNm {
+        color: #ffffff;
+        font-size: 16pt;
+        font-weight: bold;
+        height: 150px;
+        overflow-y: hidden;
+    }
+
+    ._sysComment {
+        position: absolute;
+        color: white;
+        font-size: 11pt;
+        overflow-y: hidden;
+        bottom: 40px;
+        right: 30px;
+    }
+
+    .inputLogin {
+        width: 100%;
+    }
+
+    /** tooltip */
+    .tooltiptext {
+        display: none;
+        width: 250px;
+        color: #000;
+        font-size: 11pt;
+        background-color: #FFFFFF;
+        border: 1px solid #000000;
+        text-align: center;
+        border-radius: 3px;
+        padding: 10px;
+        filter: alpha(opacity=80);
+        opacity: 0.8;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .tag.is-rounded {
+        background-color: #959499;
+        color: white;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    ._fLeft {
+        float: left;
+    }
+
+    ._fRight {
+        float: right;
+    }
+
+    ._mgTop50 {
+        margin-top: 50px;
+    }
+
+    ._mgTop30 {
+        margin-top: 30px;
+    }
+
+    ._mgTop25 {
+        margin-top: 25px;
+    }
+
+    ._mgTop20 {
+        margin-top: 20px;
+    }
+
+    ._mgTop10 {
+        margin-top: 10px;
+    }
+
+    ._mgTop9 {
+        margin-top: 9px;
+    }
+
+    ._mgTop5 {
+        margin-top: 5px;
+    }
+
+    ._mgRight10 {
+        margin-right: 10px;
+    }
+
+    .disable-btn {
+        background-color: #353535;
+        color: #000;
+        font-size: 13px;
+        display: inline;
+        border: 1px solid #0074bd;
+    }
+
+    #two-factor-modal .btn {
+        background-color: #0074bd;
+        color: #fff;
+        font-size: 13px;
+        display: inline;
+        border: 1px solid #0074bd;
+    }
+
+    .two-factor-modal-content-wrapper {
+        width: 490px;
+        background-color: #ffffff;
+        border: 2px solid #000000;
+    }
+
+    .two-factor-modal-content-header {
+        background-color: #002760;
+        color: white;
+        padding: 10px 15px 10px 15px;
+    }
+
+    .two-factor-modal-content-header span {
+        font-size: 15px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    #alert-modal .btn {
+        background-color: #0074bd;
+        color: #fff;
+        font-size: 13px;
+        display: inline;
+        border: 1px solid #0074bd;
+    }
+
+    .alert-modal-content-wapper {
+        width: 300px;
+        background-color: #ffffff;
+    }
+
+    .alert-modal-content-header {
+        background-color: #002760;
+        color: white;
+        padding: 10px 15px 10px 15px;
+    }
+
+    .alert-modal-content-header span {
+        font-size: 15px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+
+    /** bulma modal center bug IE */
+    .modal {
+        flex-direction: column;
+    }
+
+    /** 2st password **/
+    .st2-modal-content-wapper {
+        width: 400px;
+        background-color: #ffffff;
+    }
+</style>
+
+</html>

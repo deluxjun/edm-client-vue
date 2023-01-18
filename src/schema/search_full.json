@@ -1,0 +1,75 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "range": {
+        "type": "string",
+        "title": "label.range",
+        "enum": [
+          { "value": "all", "label": "label.all" },
+          { "value": "title", "label": "label.filename" },
+          { "value": "content", "label": "label.content" }
+        ],
+        "attrs": {
+          "type": "radio"
+        }
+      },
+      "name": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 80,
+        "title": "label.keyword",
+        "attrs": {
+          "placeholder": "label.keyword",
+          "title": "messages.inputKeyword"
+        }
+      },
+      "owner": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 80,
+        "title": "label.owner",
+        "attrs": {
+          "type" : "user",
+          "placeholder": "label.owner"
+        }
+      },
+      "r_creator_name": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 80,
+        "title": "label.creator",
+        "attrs": {
+          "type" : "user",
+          "placeholder": "label.creator"
+        }
+      },
+      "modifier": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 80,
+        "title": "files.modifier",
+        "attrs": {
+          "type" : "user",
+          "placeholder": "files.modifier"
+        }
+      },
+      "r_creation_date": {
+        "type": "string",
+        "title": "label.createdDate",
+        "attrs": {
+          "type" : "daterange"
+        }
+      },
+      "r_modify_date": {
+        "type": "string",
+        "title": "label.modifiedDate",
+        "attrs": {
+          "type" : "daterange"
+        }
+      }
+
+    },
+    "additionalProperties": false,
+    "required": []
+  }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Time</title>
+    <style>
+        * {
+            font-family: "맑은 고딕";
+        }
+        
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }        
+
+        .wrapper {
+            width: 100%;       
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);                 
+        }
+
+        .clock {
+            width: 100%;            
+            font-size: 12vw;
+            text-align: center;            
+            
+        }
+
+        .date {
+            text-align: center;
+            font-size: 6vw;
+            margin-top: 5px;
+        }
+
+        .txt {
+            font-size: 8vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="clock">
+            <span class="hour">00</span>
+            <span class="txt">시</span>
+
+            <span class="minutes">00</span>
+            <span class="txt">분</span>
+
+            <span class="time">00</span>
+            <span class="txt">초</span>
+        </div>
+        <div class="date">0000년 00월 00일</div>
+    </div>    
+    <script>                                   
+        function clock() {        
+            let time = new Date(),                        
+                hours = time.getHours(),                    
+                minutes = time.getMinutes(),
+                seconds = time.getSeconds();
+                
+            document.querySelectorAll('.hour')[0].innerHTML = harold(hours)
+            document.querySelectorAll('.minutes')[0].innerHTML = harold(minutes)
+            document.querySelectorAll('.time')[0].innerHTML = harold(seconds)
+            document.querySelectorAll('.date')[0].innerHTML = harold(time.getFullYear()) + "년 " + harold(time.getMonth() + 1) + "월 " + harold(time.getDate()) + "일";
+        }
+    
+        function harold(standIn) {
+            if (standIn < 10) {
+                standIn = '0' + standIn
+            }
+            return standIn;
+        }
+        setInterval(clock, 1000);    
+    </script>
+</body>
+</html>

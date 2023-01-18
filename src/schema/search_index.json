@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 80,
+      "title": "label.filename",
+      "attrs": {
+        "placeholder": "label.filename",
+        "title": "messages.inputFilename"
+      }
+    },
+    "r_folder_id": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 80,
+      "title": "files.folderName",
+      "attrs": {
+        "type": "folder",
+        "placeholder": "files.folderName"
+      }
+    },
+    "categories": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 80,
+      "title": "label.categories",
+      "attrs": {
+        "type": "category",
+        "placeholder": "label.categories",
+        "title": "messages.inputTag"
+      }
+    },
+    "keyword": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 80,
+      "title": "label.tag",
+      "attrs": {
+        "placeholder": "label.tag",
+        "title": "messages.inputTag"
+      }
+    },
+    "r_creator_name": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 80,
+      "title": "label.creator",
+      "attrs": {
+        "type": "user",
+        "placeholder": "label.creator"
+      }
+    },
+    "modifier": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 80,
+      "title": "files.modifier",
+      "attrs": {
+        "type": "user",
+        "placeholder": "files.modifier"
+      }
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 80,
+      "title": "label.owner",
+      "attrs": {
+        "type": "user",
+        "placeholder": "label.owner"
+      }
+    },
+    "r_creation_date": {
+      "type": "string",
+      "title": "label.createdDate",
+      "attrs": {
+        "type": "daterange"
+      }
+    },
+    "r_modify_date": {
+      "type": "string",
+      "title": "label.modifiedDate",
+      "attrs": {
+        "type": "daterange"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": []
+}

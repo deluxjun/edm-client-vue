@@ -1,0 +1,902 @@
+buttons:
+  certificationNumber: 인증번호 요청
+  cancel: 취소
+  change: 변경
+  close: 닫기
+  copy: 복사
+  copyFile: 파일 복사
+  copyToClipboard: 클립보드로 복사
+  create: 생성
+  createFolder: 폴더 생성
+  delete: 삭제
+  download: 다운로드
+  info: 정보
+  more: 더 보기
+  move: 이동
+  moveFile: 파일 이동
+  new: 신규 생성
+  next: 다음
+  ok: 확인
+  replace: 교체
+  previous: 이전
+  rename: 이름 바꾸기
+  save: 저장
+  search: 검색
+  select: 선택
+  share: 공유
+  publish: 배포
+  update: 업데이트
+  upload: 등록
+  bigupload: 대용량 등록
+  gridView: 목록
+  list1View: 작은 아이콘
+  list2View: 큰 아이콘
+  detailView: 상세보기
+  edit: 편집
+  editCancel: 편집 취소
+  analyze: 계산하기
+  link: 링크
+  unlink: 링크 해제
+  draft: 기안
+  sort: 정렬
+  apply: 적용
+  rewrite: 승인
+  reject: 반려
+  rollback: 기안 취소
+  fullscreen: 전체화면
+  start: 시작
+  stop: 중단
+  revert: 되돌리기
+  alldelete: 일괄삭제
+  init: 초기화
+  release: 해제
+  add: 추가
+  permissionAdd: 권한신청
+  previousRestore: 이전 권한복원
+success:
+  linkCopied: 링크 복사 완료
+  complete: 완료
+errors:
+  forbidden: 요청하신 페이지에 접근이 금지 되어있습니다.
+  internal: 서비스 처리과정에서 장애가 발생하였습니다.
+  notFound: 요청하신 페이지를 찾을 수 없습니다.
+  message: 서비스 이용에 불편을 드려 죄송합니다.
+  question: 지속적인 장애가 발생할 경우 아래의 연락처로 문의 주시기 바랍니다.
+  tel: "전화번호: 0000-0000"
+  404msg1: 방문하시려는 페이지의 주소가 잘못되었거나, 페이지의 주소가 변경
+  404msg2: 혹은 삭제되어 요청하신 페이지를 찾을 수 없습니다.
+  404msg3: 입력하신 주소가 정확한지 다시 한번 확인해 주시기 바랍니다.
+  403msg1: 방문하시려는 페이지의 권한이 없거나, 페이지 접근이 금지
+  403msg2: 또는 권한이 삭제되어 요청하신 페이지를 접근을 금지합니다.
+  403msg3: 입력하신 주소가 정확한지 다시 한번 확인해 주시기 바랍니다.
+  500msg1: 찾고 있는 리소스에 문제가 있어 표시할 수 없습니다.
+  500msg2: 입력하신 주소가 정확한지 다시 한번 확인해 주시기 바랍니다.
+  disconnect: 세션 연결이 종료되었습니다.
+  disconnectMsg1: ECM Agent Tray Menu의 'ECM바로가기'를 통해 재접속하시기 바랍니다.
+  agentInstall: Agent 설치가 안되었습니다.
+  agentInstallMsg1: ECM Agent Install 해주세요.
+  permissionError: 권한이 없습니다.
+  permissionErrorMsg1: ECM 담당자에게 연락해주세요.
+files:
+  rootId: 문서함
+  folders: 폴더
+  files: 파일
+  home: 홈
+  lastModified: 수정된 날짜
+  loading: 불러오는 중...
+  metadata: 메타데이터
+  owner: 소유자
+  modifier: 수정(삭제)자
+  name: 이름
+  size: 크기
+  items: 건
+  moreItems: 건 이상..
+  Sites: 부서 문서함
+  bookmark: 즐겨찾기
+  carryout: 반출함
+  carryout2: 외부열람 허용문서함
+  recentDoc: 최근 문서함
+  trash: 휴지통
+  search: 검색 결과
+  Categories: 카테고리
+  myShared: 내 공유함
+  retentionBox: 폐기 예정
+  request: 기안 요청함
+  approval: 기안 승인함
+  complete: 기안 완료함
+  Shared: 공유 문서함
+  Workspace: 내 문서함
+  department: 부서문서함
+  doctype: 문서유형
+  lockowner: 편집중사용자
+  version: 버전
+  folderName: 문서함
+  deleteName: 삭제자
+  deleteDate: 삭제일시
+  onlyExpired: 폐기된 문서함
+login:
+  title: XEDRM
+  message: 로그인하여 주세요
+  password: 비밀번호
+  submit: 로그인
+  username: 아이디
+  logout: 로그아웃
+  adminManager: 관리자 도구
+  statistic: 통계
+  addShortCut: 바로가기 등록
+  profile: 프로필 관리
+  info: 기업에서 발생되는 이미지, 도면, 전자문서, 기록물 등의 비정형 데이터를 효율적으로 관리하기 위한 ECM/EDM/EDRM 제품입니다.
+  saveId: 아이디 저장
+  language: 언어
+  alarm: 알림 관리
+  permission: 권한 검색
+  groupwareWorkspace: 내문서함 용량증설 신청
+  myinfo: 내정보 관리
+label:
+  windowOpen: 원도우 탐색기 열기
+  location: 위치
+  sms: SMS
+  mail: 메일
+  theme0: 테마0
+  theme1: 테마1
+  theme2: 테마2
+  shortcut: 바로가기
+  addusergroup: 사용자/조직 추가
+  includegroup: 속한 그룹
+  all: 모두
+  filename: 파일명
+  content: 내용
+  keyword: 키워드
+  createdDate: 생성된 날짜
+  created: 생성자 / 생성된 날짜
+  modifiedDate: 수정(삭제)된 날짜
+  deletedDate: 삭제된 날짜
+  modified: 수정자 / 수정된 날짜
+  tag: 태그
+  tags: 태그
+  categories: 카테고리
+  owner: 소유자
+  creator: 생성자
+  range: 범위
+  name: 이름
+  description: 설명
+  docType: 문서 유형
+  expiryDate: 보존연한 폐기일
+  permanence: 영구보존
+  general: 일반
+  extensions: 확장
+  extendedProperties: 확장 속성
+  links: 링크
+  volume: 볼륨 정보
+  inherited: 상속
+  notInherited: 상속하지 않음
+  properties: 속성
+  enabled: 활성화
+  disabled: 비활성화
+  activity: 활성
+  execute: 실행
+  executeAsynchronously: 비동기 실행
+  appliedToChildren: 하위 폴더 적용
+  success: 성공
+  manageRule: 룰 관리
+  add: 추가
+  assign: 할당
+  unassign: 할당 해제
+  drafter: 기안자
+  rewriter: 승인자
+  rewrite: 승인
+  draftCommand: 기안 명령
+  tommorrow: 내일
+  nextWeek: 다음주
+  nextMonth: 다음달
+  next3Month: 다음 3달
+  draftPeriod: 기간
+  draftline: 결재 라인
+  header: 머리글
+  contents: 내용
+  comments: 커멘트
+  items: 건
+  sign: 사인
+  title: 제목
+  department: 부서
+  completeDate: 완료일
+  rewriting: 결재중
+  complete: 결재완료
+  url: URL
+  desc: 내림차순
+  asc: 오름차순
+  creation_date: 생성된 날짜
+  create_userid: 생성자
+  lastmodified: 수정된 날짜
+  path: 경로
+  uploading: 등록중
+  details: 상세
+  selected: "{name}"
+  selectedWithCount: "{name}.. ({count}) 건"
+  edit: 편집
+  remove: 삭제
+  overwrite: 덮어쓰기
+  overwriteMessage: 덮어쓰기 할 경우 버전업 되며 버전은 10개까지 보관됩니다.
+  plzwait: 잠시만 기다려 주세요
+  error: 오류
+  cancelMessage: 작업을 취소하시겠습니까?
+  warning: 경고
+  subject: 제목
+  approvalDate: 기안일시
+  author: 작성자
+  sharer: 공유한 사람
+  shareCreated: 공유일시
+  message: 내용
+  id: 아이디
+  group: 조직
+  space: 용량
+  user_state: 상태
+  directory_empty: 이 폴더는 비어 있습니다.
+  empty_search_result: 검색결과가 없습니다.
+  select_category: 카테고리를 선택하세요.
+  empty_category: 해당 카테고리에 파일이 없습니다.
+  multi_category: ※ 일괄 카테고리 설정시 기존 설정된 카테고리 정보는 사라집니다.
+  bookmark_empty: 즐겨찾기에 추가한 파일이 없습니다.
+  request_empty: 요청한 파일이 없습니다.
+  approval_empty: 결재할 파일이 없습니다.
+  complete_empty: 결재완료된 파일이 없습니다.
+  receivedShare_empty: 공유받은 파일이 없습니다.
+  myshare_empty: <공유함> 입니다.
+  category_empty: <카테고리> 문서함 입니다.
+  share_empty: 공유한 파일이 없습니다.
+  group_empty: 데이터가 없습니다.
+  overlap: 중복파일
+  samefile: 동일한 내용
+  samename: 동일한 파일명
+  overlapdesc: 중복되는 문서의 대표파일 리스트 입니다.
+  overlapmain: 대표파일
+  notoverlap: 중복되는 대표파일이 존재하지 않습니다.
+  bundleName: 묶음명
+  folder: 폴더
+  profile_imgSizeLimit: 파일의 크기는 300KB로 제한됩니다.
+  security:
+    allPrivileges: 모든 사용자 접근
+    super: 관리자만 접근(숨김)
+    read: 모든 사용자 읽기 접근
+    profile: 보안프로파일
+    local: 사용자/조직별 설정
+  approvedPrivs: 승인된 권한
+  results: 결과
+  errorDetails: 오류 내용
+  select: 선택
+  sel_all: 전체선택
+  sel_none: 선택안함
+  sel_folder: 폴더선택
+  sel_file: 파일선택
+  selectRestrictions: "{count} 이상 선택은 제한됩니다."
+  actionMenu: 메뉴
+  noItems: 선택되지 않음
+  acl: 로컬 권한
+  user: 사용자
+  carryingOut: 외부사용 처리
+  text: 텍스트 파일
+  ppt: 파워포인트 파일
+  excel: 엑셀 파일
+  word: 워드 파일
+  when: 이벤트
+  conditions: 조건
+  actions: 액션
+  manageNoty: 알림 관리
+  setManageNoty: 알림 설정
+  mg-noty: 마이가드 알림
+  native-noty: 기본 알림
+  notSpecified: 지정하지 않음
+  permissionGroup-add: 권한 그룹 추가
+  permissionGroup-create: 권한 그룹 만들기
+  permissionGroup-edit: 권한 그룹 수정
+  permissionGroup-view: 권한 그룹 보기
+  member: 구성원 보기
+  pgroupName: 권한그룹 명
+  deptGroup-add: 사용자 / 조직 추가
+  view: 보기
+  filterSearch: 필터 검색
+  memberAdd: 멤버추가
+  manageDelegation: 인계
+  type: 종류
+  filefolderName: 파일/ 폴더명
+  hidden: 숨김
+  inbound: 생성 시
+  checkin: 편집 시
+  outbound: 삭제 또는 이동 시
+  drm: 암호화
+  subGroupInclude: 하위 부서 포함
+  Jikgub: 직급정보
+messages:
+  passwordExpired: 비밀번호가 만료되었습니다. 비밀번호를 변경해주세요.
+  fileNotFound: "항목을 찾을 수 없습니다. 항목의 위치를 확인하고 다시 시도하십시오."
+  urlShareChange: URL 공유 방법 변경시, 기존 URL이 삭제됩니다. 삭제하시겠습니까?
+  removeSession: 세션을 삭제하시겠습니까?
+  removed: 삭제되었습니다
+  removeError: 삭제되지 않았습니다.
+  inputKeyword: 키워드를 입력하세요
+  inputFilename: 파일명을 입력하세요
+  inputTag: 태그를 입력하세요
+  selectCategory: 카테고리 선택
+  selectUser: 사용자 선택
+  selectUserAndGroup: 사용자/조직 선택
+  selectFiles: 파일 선택
+  selectFolder: 문서함 선택
+  required: 필수
+  mustBeNumber: 수형식이어야 합니다
+  checkValidation: 형식이 맞는지 확인해 주세요
+  volumeUsing_max: "{max} 중 "
+  volumeUsing_usable: "{usable} 사용 중"
+  volumeUsing: "{max} 중 {usable} 사용 중"
+  inputName: 이름 입력
+  inputDesc: 설명 입력
+  inputMessage: 메시지 입력
+  inputRuleTypes: 룰 타입 입력
+  invalidData: 잘못된 데이터입니다
+  editRule: 룰 편집
+  completed: 완료
+  cannotSavelinkedRule: 룰 링크를 저장할 수 없습니다
+  linkedTo: 링크
+  confirmMessage: "정말 {action} 하시겠습니까?"
+  closeMessage: 다이얼로그를 닫으시겠습니까?
+  illegalFilename: 폴더/파일 이름에는 다음 문자를 사용할 수 없습니다.(\ / :* " < > |)
+  wrongFilename: 해당 파일이름은 사용할 수 없습니다.
+  draft_progressing: 작성 중..
+  draft_approved: 결제 완료됨
+  draft_rejected: "{rewriter}님이 반려 하셨습니다."
+  draft_rollbacked: 재작성 중..
+  dragupload: 업로드하려면 파일을 이 창으로 끌어다 놓으세요.
+  dragcomment: 이 영역에 Drag & Drop으로 문서를 등록할 수 있습니다.
+  self: 기안대상자와 결재 대상자가 같습니다.
+  isduplicateDoc: 이 문서의 내용은 중복되었습니다. 계속 업로드하실건가요?
+  duplicateDoc: 중복된 문서입니다.
+  security:
+    allPrivileges: 모든 사용자가 모든 권한으로 이 파일/폴더에 접근 가능합니다
+    allPrivilegesSUPER: 관리자(SUPER)만 접근 가능합니다. 주의! 기존 권한은 사라집니다.
+    super: 관리자만 접근 가능하도록 설정합니다.
+    read: 모든 사용자가 읽기 권한을 가집니다.
+    profile: 미리 정의된 보안프로파일을 설정합니다
+    local: 로컬 보안을 설정합니다
+    checkPermission: 권한을 체크하지 않았거나 항목이 존재하지 않습니다
+  selectFileOrFolder: 파일 또는 폴더가 선택되지 않았습니다
+  selectedMultiple: 복수의 파일 또는 폴더가 선택되었습니다
+  workingMultiple: "전체 {total} / 성공 {success}, 실패 {fail}"
+  inheritedConfirm: 권한 상속을 해제 하시겠습니까?
+  notInheritedConfirm: 로컬 권한을 해제 하시겠습니까?
+  inherited: 부모 폴더로 부터 권한 상속 중입니다
+  notInherited: 로컬 권한을 적용 중입니다
+  noCommands: 사용 가능한 명령이 없습니다
+  isOverSize: 이 확장자는 {size} 까지만 업로드 할 수 있습니다.
+  mustBeSameName: 같은 파일명만 체크인할 수 있습니다.
+  fileExtChanged: 파일의 확장자가 변경되었습니다. 변경하시겠습니까?
+  fileChangeOrUpload: 파일 바꾸기 또는 덮어쓰기
+  overwrite: 대상 폴더의 파일 덮어쓰기
+  allowRename: 이름 변경하여 파일 만들기
+  overWriteComment: 동일한 파일 명이 있는 경우는 버전업이 됩니다.
+  skipFileComment: 동일한 파일 명이 있는 경우는 업로드에서 제외합니다.
+  allowRenameComment: 동일한 파일 명이 있는 경우는 복사본으로 생성됩니다.
+  skipfile: 이 파일 건너뛰기
+  newfile: 신규파일 업로드
+  allcheck: 모두 적용
+  overWriteFileName: 대상 폴더에 이름이 "{name}"인 파일이 이미 있습니다.
+  uploadState: "전체 : {totalCount}건, 성공 : {successCount}건, 실패 : {failCount}건"
+  overwriteCategory: 이미 등록된 카테고리 입니다.
+  overwriteTag: 이미 등록된 태그 입니다.
+  uploadClear: 초기화
+  zerofileUpload: 0 byte 파일은 업로드할 수 없습니다.
+  exceptionExtfileUpload: 이 확장자는 업로드 제약이 되어 있습니다.
+  totalSizeLimit: 총 "{size}" 이상 업로드가 제한됩니다.
+  same: 이미 추가된 조직 또는 사용자 입니다.
+  rightGroupDelete: 정말 권한그룹을 삭제하겠습니까?
+  executeRule: 현재 폴더 내 파일들에 대해 룰을 실행합니다.
+  errorMsg: 다운로드에 실패하였습니다.
+  selected: ({folder}) 이 선택됨
+  selectDocumentBox: 문서함을 선택해 주세요
+  selectOwner: 소유자를 선택하세요
+  copyToClipboard: "{target}이 클립보드에 복사되었습니다."
+  copyToPress: "Ctrl+C를 눌러 복사하세요."
+  checkingFiles: "파일 검사중"
+  searchPermission: "사용자를 입력해 주세요."
+  adminPermissionExist: 관리 권한을 가진 사용자가 한명도 없습니다. 다시 확인해주세요.
+  memberExist: 멤버가 없습니다. 멤버를 추가해주세요.
+  permissionHistoryError: 이전 권한이력이 없습니다.
+
+prompts:
+  unzipMessage: 압축 풀 문서함을 지정해주세요
+  unzipConfirmMsg: 현재 위치에 압축을 해제하시겠습니까?
+  expireRestore: 폐기 복원
+  realExpire: 완전 제거
+  copy: 복사
+  copyMessage: "복사할 위치를 지정해 주세요:"
+  deleteMessage: 정말 삭제할까요?
+  deleteTitle: 파일 삭제
+  deleteFolderTitle: 폴더 삭제
+  deleteMultipleTitle: 여러 항목 삭제
+  download: 다운로드
+  fileInfo: 파일 정보
+  lastModified: 수정된 날짜
+  move: 잘라내기
+  moveMessage: "이동할 위치를 선택해 주세요:"
+  newDir: 신규 폴더
+  newDirMessage: 신규 폴더명을 입력하세요
+  remove: 삭제
+  newfile: 업로드
+  makenewfile: 신규 파일
+  makefileType: 신규 파일 유형을 선택해 주세요.
+  makefileMessage: 신규 파일명을 입력하세요.
+  newfilename: 새 파일
+  numberDirs: 폴더 수
+  numberFiles: 파일 수
+  replace: 교체
+  rename: 이름 바꾸기
+  bookmarkrename: 즐겨찾기 이름 변경
+  renameMessage: 파일명을 입력해 주세요
+  renameFolderMessage: 폴더명을 입력해 주세요.
+  restoreMessage: 복구할 위치를 지정해 주세요
+  restoreOriginalPath: 원래 위치로 복원
+  show: 보기
+  size: 크기
+  urlshare: URL 복사
+  share: 공유
+  shareChange: 공유 설정 변경
+  shareCancel: 공유 해제
+  paste: 붙여넣기
+  property: 속성
+  Addbookmark: 즐겨찾기
+  Removebookmark: 즐겨찾기 해제
+  permission: 권한
+  history: 이력
+  zip: 압축
+  zipdownload: 압축하여 다운로드
+  zipMessage: 압축 파일 리스트
+  usingPassword: 패스워드 사용
+  checkout: 편집
+  checkoutMode: 편집모드
+  readmode: 읽기모드
+  checkin: 편집 완료
+  version: 버전
+  approval: 비인가 단말 외부사용 신청
+  viewer: 미리 보기
+  rules: 룰 관리
+  onlineedit: 공동 편집
+  goto: 해당 위치로 이동
+  unzip: 압축 해제
+  progress: 작업 진행중
+  progressEnd: 작업 완료
+  trashClean: 휴지통 비우기
+  trashCleanMessage: 휴지통을 비우시겠습니까?
+  restore: 복원
+  expire: 완전삭제
+  removeRewrite: 기안 삭제
+  expireTitle: 파일 완전 삭제
+  expireMessage: 해당 파일을 완전히 삭제하시겠습니까?
+  realExpireTitle: 폐기 대상 완전 제거
+  realExpireMessage: 해당 폐기 대상을 데이터베이스에서 완전히 삭제하시겠습니까?
+  personal: 개인정보 포함여부
+  scan: 스캔
+  multipleUpload: 다중 파일 등록
+  checkoutcancel: 편집 취소
+  search: 검색
+  multipleProperty: 복수 파일
+  multipleDescription: "'{title}' 외 {count}건"
+  EncryptDRM: 일반 문서 암호화
+  DescryptDRM: 보안 문서 암호화 해제
+  urlDRM: 승인반출 시스템 결재 신청
+  synchronIn: 동기화 수행(in)
+  synchronOut: 동기화 수행(out)
+  synchronHistory: 동기화 이력
+  exitTransfer: 종료자료 이관 실행
+  exitTransferHistory: 종료자료 이관 이력
+  prsrv: 보존연한 설정
+  folderRetention: "생성일 기준 {year}년 {month}개월로 보존연한 설정"
+
+prsrv:
+  create: 생성일 기준
+  permanent: 영구 보존
+
+search:
+  index: 인덱스 검색
+  fulltext: 전문 검색
+  conditiontext: 조건 검색
+  overlaptext: 중복 검색
+  images: 이미지
+  music: 음약
+  pdf: PDF
+  search: 검색...
+  alarminput: 검색어를 입력해주세요.
+share:
+  expired: 폐기일
+  count: 접근 회수
+  gen: 생성
+  copy: 복사
+  cancel: 공유 취소
+  createURL: URL 공유 생성
+  unshareURL: URL 공유 취소
+  copyURL: URL 복사
+  all: 모든사용자 지정
+  select: 권한지정
+detail:
+  title: 제목
+  version: 버전
+  object_id: 아이디
+  list: 리스트
+  create_date: 생성된 날짜
+  comment: 설명
+  expire_date: 폐기일
+  type: 문서유형
+viewer:
+  download: download
+  comment: Comment
+  rate: 평점
+permission:
+  permission: 권한
+  current: 현재 권한
+  isInheritanceFolder: 상속 폴더
+  inheritance: 상속
+  noninheritance: 로컬 권한
+  securityclass: 보안 클래스
+  basicpermission: 기본 권한
+  advancedpermission: 상세 권한
+  name_table: 사용자명
+  all_table: 모두
+  modify_table: 수정
+  view_table: 보기
+  read_table: 읽기
+  write_table: 쓰기
+  ALL: 전체
+  control: 제어
+  edit: 편집
+  modify: 속성 수정
+  delete: 삭제
+  list: 리스트 표시
+  view: 보기
+  download: 다운로드
+  print: 이미지 출력
+  create: 생성
+  write: 쓰기(갱신)
+  check: 편집
+  add: 추가 (댓글,링크)
+  rename: 변경
+  read: 목록조회
+  div: 구분
+  usergroup: 사용자 / 조직
+  group: 조직
+  basicpgroup: 기본그룹
+  okpgroup: 승인그룹
+  pgroup: 권한그룹
+  user: 사용자
+  name:
+    Read: 읽기
+    Write: 쓰기
+    Admin: 관리
+    Basic: 기본
+    ReadOnly: 읽기만
+history:
+  name: 이름
+  event: 이벤트
+  des: 설명
+  user: 사용자
+  date: 일시
+version:
+  version: 버전
+  name: 이름
+  des: 설명
+  size: 크기
+  creater: 생성자
+  create_date: 생성된 날짜
+  modifier: 수정자
+  modify_date: 수정된 날짜
+  options: 옵션
+  revertConfirmMsg: 정말로 이 문서의 버전을 되돌리겠습니까?
+  comment: 코멘트
+  commentChange: 코멘트 변경
+checkin:
+  minorversion: 마이너 버전
+  majorversion: 메이저 버전
+bookmark:
+  addbookmarkmsg: 즐겨찾기에 추가되었습니다.
+  removebookmarkmsg: 즐겨찾기에서 삭제되었습니다
+
+adminMenu:
+  idcheck: 영어 또는 숫자로 표기해 주세요.
+  rule_userName: ID를 입력해주세요.
+  rule_name: 이름을 입력해주세요.
+  rule_pw: 암호를 입력해주세요.
+  rule_pwvalidChar: 영문 대 소문자, 숫자, 특수문자를 사용해주세요.
+  rule_pwvalidLen: 비밀번호는 8자 이상 입력하셔야 합니다.
+  rule_pwcheck: 암호를 다시 입력해주세요.
+  rule_pwcheck2: 암호가 일치 하지 않습니다.
+  rule_group: 1개 이상의 조직을 선택해주세요.
+  rule_groupId: 조직 ID를 입력해주세요.
+  rule_groupName: 조직 이름을 입력해주세요.
+  rule_code: 코드를 입력해주세요.
+  rule_code_value: 코드값을 입력해주세요.
+  rule_notice: 공지사항을 입력해주세요.
+  rule_notice_value: 공지사항 내용을 입력해주세요.
+  rule_doc: 문서유형 ID를 입력해주세요.
+  rule_doc_desc: 문서유형 이름을 입력해주세요.
+  rule_category: 카테고리 ID를 입력해주세요.
+  rule_category_Name: 카테고리 이름을 입력해주세요.
+  rule_template_Name: 템플릿 이름을 입력해주세요.
+  rule_templateattr_Name: 속성 이름을 입력해주세요.
+  rule_acl_name: ACL 이름을 입력해주세요.
+  rule_expr: 표현식을 입력해주세요.
+  ? rule_volume
+  rule_email: 이메일을 입력해주세요.
+  rule_email2: 이메일 형식이 맞지 않습니다.
+  to: 을(를)
+  amdinManager: 관리자 도구
+  user: 사용자
+  user_create: 사용자 생성
+  user_edit: 사용자 편집
+  userinfo: 사용자 정보
+  selectedlist: 선택한 리스트
+  user_id: ID
+  user_name: 이름
+  user_pw: 비밀번호
+  user_pwconfirm: 비밀번호 확인
+  user_pwchange: 비밀번호 변경
+  user_groupinfo: 조직 정보
+  user_group: 조직
+  user_contact: 연락 정보
+  user_email: 이메일
+  user_address: 주소
+  user_etc: 기타
+  user_state: 상태
+  user_active: 활성화
+  user_inactive: 비활성화
+  user_Volume: 용량
+  user_setMaxVolume: 최대 용량 설정
+  user_curMaxVolume: 현재 최대 용량
+  user_changeVolume: 변경 후 (GB)
+  user_selgroup: 조직
+  user_homepage: Home 설정
+  user_theme: 테마
+  setting: 설정
+  group: 조직
+  group_create: 조직 생성
+  group_edit: 조직 편집
+  group_id: 조직 ID
+  group_desc: 조직 이름
+  group_manager: 조직 관리자
+  task: 작업
+  task_name: 작업 이름
+  task_last: 마지막 실행시간
+  task_next: 다음 실행시간
+  task_health: 진행상태
+  task_started: 시작 시간
+  task_duration: 동작 시간
+  task_result: 결과
+  task_schedule: 스케줄
+  task_expr: 표현식
+  log: 로그
+  doctype: 문서유형
+  docCreate: 문서 유형 생성
+  docId: 문서 ID
+  docname: 문서 이름
+  docdescription: 유형 설명
+  docretention: 보존기간
+  doccc: 컨텐트 클래스 ID
+  docdeadline: 데드라인(편집/잠금)
+  docbasic: 기본 템플릿
+  docapply: 적용
+  notice: 공지사항
+  notice_create: 공지사항 생성
+  notice_edit: 공지사항 편집
+  notice_notice: 공지사항
+  notice_authorName: 소유자
+  notice_createDate: 생성된 날짜
+
+  category: 카테고리
+  category_ID: 카테고리 ID
+  category_Name: 카테고리 이름
+  category_Create: 카테고리 생성
+  category_Edit: 카테고리 편집
+  template: 템플릿
+  template_add: 템블릿 추가
+  template_edit: 템플릿 편집
+  template_name: 템플릿 이름
+  template_desc: 설명
+  template_rule: 룰
+  template_Attr: 템플릿 속성 관리
+  template_attrname: 속성 이름
+  template_lable: 레이블
+  template_value: 값
+  template_type: 타입
+  template_editor: 에디터
+  template_attr_add: 속성 추가
+  template_attr_edit: 속성 편집
+  template_datatype: 데이터 타입
+  template_select_editor: 편집종류
+  template_vital: 필수항목
+  code: 코드
+  code_code: 코드
+  code_name: 이름
+  code_value: 값
+  code_desc: 설명
+  code_create: 코드 생성
+  code_edit: 코드 편집
+  audit: 감사
+  audit_file: 파일
+  audit_table: 테이블
+  audit_inheritance: 상속
+  audit_all: 전체 선택
+  audit_baisc: 기본값
+  audit_doc: 문서유형
+  audit_group: 조직
+  security: 보안
+  security_class: 보안 클래스
+  security_class_add: 보안 클래스 추가
+  security_group_add: 사용자/조직 추가
+  security_acl_name: 보안 클래스 ID
+  security_desc: 설명
+  security_name: 이름
+  permission_apply: 권한 적용
+  permission_detail: 고급권한
+  permission_simple: 기본권한
+  session: 세션
+  session_id: 세션 ID
+  session_name: 이름
+  session_ip: IP
+  session_time: 연결 시간
+  history: 이력
+  history_event: 이벤트
+  history_path: 경로
+  history_action: 액션
+  history_user: 사용자
+  history_date: 날짜
+  history_start: 시작일
+  history_end: 종료일
+  last_week: 지난 일주일
+  last_month: 지난 한달
+  last_3month: 지난 3개월
+  last_1year: 지난 1년
+  none: 전체
+  ExternalUse: 인가단말 외부사용
+  groupName: 조직 명
+  groupList: 조직 리스트
+  usePC: PC 인가단말 사용여부
+  useMobile: Mobile 인가단말 사용여부
+  box: 부서함 관리
+  boxName: 부서함 이름
+  boxVolume: 부서함 용량
+
+  oneEps: 1차 비밀번호 변경
+  oneEpsCancel: 1차 비밀번호 변경 취소
+  twoEps: 2차 비밀번호 변경
+  twoEpsCancel: 2차 비밀번호 변경 취소
+
+  checktext1: 숫자/영어/특수문자 중 2가지 이상 조합으로 10자 이상
+  checktext2: 연속된 문자 (예. abc), 키보드 배열(예. qwe) 3자 이상 허용하지 않음.
+  checktext3: 비밀번호는 4자리 숫자로 입력하세요.
+  checktext4: 4자리로 입력해 주세요.(ex 5412)
+
+Statistic:
+  archive: 저장소
+  search_statistic: 검색 통계
+  use_: 사용 통계
+  user: 사용자 통계
+  group: 그룹 통계
+  doc: 문서유형 통계
+  date: 날짜 통계
+  box: 문서함 통계
+  day: 일
+  month: 월
+  year: 년
+  ID: ID
+  userName: 사용자명
+  groupName: 부서명
+  dateview: 날짜
+  add: 등록
+  click: 조회
+  download: 다운로드
+  modify: 수정
+  delete: 삭제
+  boxName: 문서함
+  useVolume: 사용량 / 총
+  setting: 설정
+  shared: 공유 문서함
+  left: 남은 용량
+  use: 사용량
+
+Groupware:
+  permission: 부서함 권한 신청
+  carryout: 비인가 단말 외부 사용 신청
+
+event.changed: 폴더 메타 데이터 변경
+event.changed.short: 최신 정보
+? event.changeddocs
+event.checkedin: 체크인
+event.checkedin.short: 체크인
+? event.checkedindocs
+event.checkedout: 체크아웃
+event.checkedout.short: 체크아웃
+? event.checkedoutdocs
+event.created: 생성
+event.created.short: 요소가 생성되었습니다.
+event.deleted: 삭제
+event.deleted.short: 요소가 삭제되었습니다.
+event.downloaded: 다운로드
+event.downloaded.short: 다운로드
+? event.downloadeddocs
+event.folder.changed:     폴더 메타 데이터가 변경되었습니다.
+event.folder.changed.short:     최신 정보
+event.folder.created: 폴더가 생성되었습니다.
+event.folder.created.short:     폴더가 생성되었습니다.
+event.folder.deleted:     폴더가 삭제되었습니다.
+event.folder.deleted.short:     폴더가 삭제되었습니다.
+event.folder.moved:     폴더가 이동되었습니다.
+event.folder.moved.short:     폴더 이동 됨
+event.folder.permission:     폴더 권한이 수정되었습니다.
+event.folder.permission.short:     폴더 권한이 수정되었습니다.
+event.folder.renamed:     폴더 이름이 바뀌 었습니다.
+event.folder.renamed.short:     폴더 이름이 변경됨
+event.folder.subfolder.created:     하위 폴더가 생성되었습니다.
+event.folder.subfolder.created.short:     하위 폴더가 생성되었습니다.
+event.folder.subfolder.deleted:     하위 폴더가 삭제되었습니다.
+event.folder.subfolder.deleted.short:     하위 폴더 삭제됨
+event.folder.subfolder.permission:     하위 폴더 사용 권한이 수정되었습니다.
+event.folder.subfolder.permission.short:     하위 폴더 사용 권한이 수정되었습니다.
+event.folder.subfolder.renamed:     하위 폴더의 이름이 바뀌 었습니다.
+event.folder.subfolder.renamed.short:     하위 폴더 이름 바꾸기
+event.locked: 잠금
+event.locked.short: 잠금
+? event.lockeddocs
+event.moved: 이동
+event.moved.short: 요소 이동 됨
+event.permission: 권한 변경
+event.permission.short: 요소 사용 권한이 수정되었습니다.
+event.renamed: 이름 변경
+event.renamed.short: 요소 이름 변경됨
+event.sent: 문서가 전송되었습니다.
+event.shortcut.deleted:     바로 가기가 삭제되었습니다.
+event.shortcut.deleted.short:    단축키 삭제됨
+event.shortcut.moved:     바로 가기가 이동되었습니다.
+event.shortcut.moved.short:     바로 가기 이동 됨
+event.shortcut.stored:     바로 가기가 생성되었습니다.
+event.shortcut.stored.short:     바로 가기 생성됨
+event.stored: 업데이트
+event.stored.short: 생성
+event.unlocked: 잠금해제
+event.unlocked.short: 잠금해제
+event.user.deleted: 사용자 삭제
+event.user.deleted.short: 사용자 삭제됨
+event.user.login: 로그인
+event.user.login.short: 로그인 한 사용자
+event.user.loginfail: 로그인 실패
+event.user.logout: 로그 아웃
+event.user.logout.short: 로그 아웃
+event.user.passwordchanged: 사용자 암호가 변경되었습니다.
+event.user.passwordchanged.short: 비밀번호가 변경되었습니다.
+event.user.timeout: 세션 시간 초과
+event.user.timeout.short: 사용자 세션 시간 초과
+event.view: 조회
+event.expired: 폐기
+event.toBeDisposed: 폐기 예정 알림
+event.restore: 복구
+event.restoreversion: 버전 복구
+event.user.pwdchanged: 비밀번호 변경
+event.user.created: 사용자 생성
+event.user.updated: 사용자 수정
+event.user.delegation.expired: 만료된 사용자
+event.approval.approval: 기안
+event.approval.approve: 승인
+event.approval.return: 거절
+event.approval.recovery: 회수
+event.copy: 복사
+event.restore_expired: 폐기 복원
+event.sentemail: 이메일 송신
+event.sentmessage: 메시지 송신
+cancelcheckoutl: 체크아웃 취소
+error.security.noPermission: 권한이 없습니다.
+event.share.create: 공유 생성
+event.share.update: 공유 수정
+event.share.delete: 공유 해제
+event.urlshare.create: URL공유 생성
+event.urlshare.update: URL공유 수정
+event.urlshare.delete: URL공유 해제
+
+dealim:
+  msg1: 지난 180일 동안 비밀번호를 변경하지 않았습니다.
+  msg2: ECM을 사용하기 위해서는 비밀번호를 변경해야 합니다.
+  msg3: 비밀번호를 변경하지 않을 경우 계정이 잠길 수 있습니다.
+  msg4: 비밀번호를 변경하시겠습니까?

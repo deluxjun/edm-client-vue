@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "path": {
+            "type": "string",
+            "title": "Path",
+            "readonly": true
+        },
+        "representativeFileName": {
+            "type": "string",
+            "title": "Filename",
+            "attrs": {
+                "type": "user"
+            },
+            "readonly": true
+        },
+        "r_content_size": {
+            "type": "string",
+            "title": "size",
+            "readonly": true
+        },
+        "description": {
+            "type": "string",
+            "title": "Description",
+            "readonly": true
+        },
+        "r_creation_date": {
+            "type": "string",
+            "title": "Creation Date",
+            "readonly": true
+        },
+        "producer": {
+            "type": "string",
+            "title": "Creator",
+            "readonly": true
+        },
+        "owner_name": {
+            "type": "string",
+            "title": "Owner",
+            "readonly": true
+        }
+    }
+}
